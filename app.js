@@ -47,13 +47,13 @@ app.get('/', (req, res) => {
 })
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/eco').then(() => {
-  console.log("connected to databse succesfully")
-});
-
-// mongoose.connect("mongodb+srv://ecofriendly:eco-sahabanaal@alaa.vk08e4j.mongodb.net/ECO?retryWrites=true&w=majority").then( ()=> {
-//     console.log("connected to databse succesfully")
+// mongoose.connect('mongodb://127.0.0.1:27017/eco').then(() => {
+//   console.log("connected to databse succesfully")
 // });
+
+mongoose.connect("mongodb+srv://ecofriendly:eco-sahabanaal@alaa.vk08e4j.mongodb.net/ECO?retryWrites=true&w=majority").then( ()=> {
+    console.log("connected to databse succesfully")
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
