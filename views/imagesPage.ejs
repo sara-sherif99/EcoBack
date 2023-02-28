@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Image Uploading</title>
+</head>
+
+<body>
+	 <h1>To Upload Image on mongoDB</h1>
+	<hr>
+	<div>
+		<form action="/image/upload" method="POST" enctype="multipart/form-data">
+			<div>
+				<label for="image">Upload Image</label>
+                <input type="file" id="image" name="productImage" >
+			</div>
+			<div>
+				<button type="submit">Submit</button>
+			</div>
+		</form>
+	</div>
+
+	<hr> 
+
+	<h1>Uploaded Images</h1>
+	<div>
+		<%items.forEach(function(image) { %>
+		<div>
+			<div>
+				<img src="data:image/<%=image.img.contentType%>;base64,
+					<%=image.img.data.toString('base64')%>">
+			</div>
+		</div>
+		<% }) %>
+	</div>
+
+
+
+</body>
+
+</html>
